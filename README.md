@@ -68,6 +68,11 @@ Use: add architecture diagrams
 
 ## 🚀 Prerequisites
 
+### Ubuntu 
+
+This deployment was done leveraging Ubuntu server 24.04.3 LTS.  It was done both on the full server installation as well as the minimum server instation (recommended)
+
+
 ### 🐳 Docker
 ```bash
 sudo apt-get update
