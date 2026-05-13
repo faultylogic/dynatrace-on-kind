@@ -38,4 +38,4 @@ spec:
           service:
             name: load-test-app-service
             port:
-              number: 8080
+              number: 80
