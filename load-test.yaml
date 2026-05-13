@@ -1,0 +1,41 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: load-test-app-app
+  labels:
+    app: load-test-app
+spec:
+  containers:
+  - command:
+    - /agnhost
+    - serve-hostname
+    - --http=true
+    - --port=80
+    image: gokev/load-test-app
+    name: load-test-app
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: load-test-app-service
+spec:
+  selector:
+    app: load-test-app
+  ports:
+  # Default port used by the image
+  - port: 80
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: load-test-ingress
+spec:
+  rules:
+  - http:
+      paths:
+      - pathType: Prefix
+        path: /load-test
+        backend:
+          service:
+            name: load-test-app-service
+            port:
+              number: 8080
