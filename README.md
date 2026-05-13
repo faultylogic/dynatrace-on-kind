@@ -18,7 +18,6 @@ This repository is ideal for:
 - Dynatrace Setup
 - Verification
 - Cleanup
-- Troubleshooting
 
 ---
 
