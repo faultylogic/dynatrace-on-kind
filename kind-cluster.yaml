@@ -11,8 +11,10 @@ nodes:
       kubeletExtraArgs:
         node-labels: "ingress-ready=true"
   extraMounts:
+  #This provides a mount location for the PVC's needed by the dynatrace collectors
   - hostPath: /
     containerPath: /mnt/root
+  #This mount is needed for the agents-otel-collector-0.  This pod will fail if it can't access the `apparmor` section found here
   - hostPath: /sys/kernel/security
     containerPath: /sys/kernel/security
   extraPortMappings:
