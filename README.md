@@ -180,7 +180,7 @@ You should see:
 - `simulation-app` pods
 
 ### Test ingress
-test the ingress of the application deployment \<serverIP\>/simulation and you should see the application load
+test the ingress of the application deployment \<serverIP\>/simulation/ and you should see the application load
 
 ---
 
