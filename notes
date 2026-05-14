@@ -34,6 +34,8 @@ helm install dynatrace-operator oci://public.ecr.aws/dynatrace/dynatrace-operato
 --atomic
 
 kubectl apply -f dynakube.yaml
+# you may want to wait for the dynatrace pods to fully come up before running this command 
+kubectl apply -f simulation.yaml
 
 
 #curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-4
