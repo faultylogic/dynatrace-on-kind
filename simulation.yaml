@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: simulation-app
-        image: gokev/load-test-app
+        image: gokev/load-test-app:0.02
         ports:
         - containerPort: 80
 ---
