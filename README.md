@@ -158,6 +158,14 @@ kubectl apply -f dynakube.yaml
 
 ---
 
+## 🧭 Install The Simulation App
+
+```bash
+kubectl apply -f simulation.yaml
+```
+
+---
+
 ## 🔍 Verification
 
 ### Check pods
@@ -168,13 +176,11 @@ kubectl get pods -A
 You should see:
 - `dynatrace-operator` running  
 - `dynakube` components (ActiveGate, OneAgent)  
-- `ingress-nginx` pods  
+- `ingress-nginx` pods
+- `simulation-app` pods
 
 ### Test ingress
-Deploy a sample app and confirm routing works.
-
-Want me to generate a sample app?  
-Use: create sample app
+test the ingress of the application deployment \<serverIP\>/simulation and you should see the application load
 
 ---
 
