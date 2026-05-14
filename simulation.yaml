@@ -36,13 +36,13 @@ kind: Ingress
 metadata:
   name: simulation-ingress
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/rewrite-target: /$2 # Forwards everything after /simulation
 spec:
   rules:
   - http:
       paths:
-      - path: /simulation
-        pathType: Prefix
+      - path: /simulation(/|$)(.*)
+        pathType: ImplementationSpecific
         backend:
           service:
             name: simulation-service
